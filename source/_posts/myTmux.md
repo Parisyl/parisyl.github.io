@@ -2,7 +2,7 @@
 title: 我的TMUX配置
 date: 2023-05-28 17:30:50
 cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/screenshot.webp
-banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/eJzL7c.png
+banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/3EUBht.jpg
 poster:
   headline: My TUMX Configuration
   topic: terminal multitasking powerhouse

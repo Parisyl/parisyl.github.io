@@ -2,7 +2,7 @@
 title: 我的NeoVIM配置
 date: 2023-06-07 17:24:25
 cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/2bK2XZ.png
-banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/noqr1D.png
+banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/5oDmVC.jpg
 poster:
   headline: My NeoVIM Configuration
   topic: efficient text editor with powerful features and customizable workflow

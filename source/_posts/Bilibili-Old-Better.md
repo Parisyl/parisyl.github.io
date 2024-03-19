@@ -7,8 +7,8 @@ poster:
   color: pink
 date: 2024-03-18 19:46:52
 description: 恢复旧版Bilibili页面，为了那些念旧的人。
-cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/WDeknz.jpg
-banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/WDeknz.jpg
+cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/yFCHfw.jpg
+banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/sdbcqjkkjq.png
 ---
 #### Preview
 
