@@ -6,7 +6,7 @@ banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/3EUBht.jpg
 poster:
   headline: My TUMX Configuration
   topic: terminal multitasking powerhouse
-  color: pink
+  color: yellow
 tags: TMUX
 ---
 
