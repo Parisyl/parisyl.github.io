@@ -7,7 +7,7 @@ poster:
   headline: My NeoVIM Configuration
   topic: efficient text editor with powerful features and customizable workflow
   color: yellow
-tags: vim
+tags: VIM
 ---
 
 <br>

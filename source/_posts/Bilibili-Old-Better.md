@@ -4,6 +4,7 @@ tags: [Bilibili]
 poster:
   topic: a better experience for bilibili
   headline: Bilibili-Old-Better for Safari
+  color: red
 date: 2024-02-18 19:46:52
 description: 恢复旧版Bilibili页面，为了那些念旧的人。
 cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/eJzL7c.png
@@ -12,7 +13,8 @@ banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/sdbcqjkkjq.png
 #### Preview
 
 
-{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshot2312231.png bg:white %}
+{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshot2312231.png bg:gray %}
+{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshotadadasawqwq.png bg:gray %}
 
 #### 前置要求
 
