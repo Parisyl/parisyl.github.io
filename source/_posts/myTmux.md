@@ -7,7 +7,7 @@ poster:
   headline: My TUMX Configuration
   topic: terminal multitasking powerhouse
   color: pink
-tags: Terminal iterm2 tmux
+tags: TMUX
 ---
 
 ![tmux](https://draculatheme.com/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdracula%2Ftmux%2Fmaster%2Fscreenshot.png&w=1920&q=100)
