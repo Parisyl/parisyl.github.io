@@ -1,0 +1,114 @@
+open_graph:
+  enable: true
+  twitter_id: # for open_graph meta
+article:
+  type: tech # tech/story
+  auto_cover: true
+logo:
+  subtitle: '个人博客 | created by Paris'
+# 侧边栏主功能导航菜单
+menubar:
+  columns: 4 # 一行多少个
+  items: # 可按照自己需求增加，符合以下格式即可
+    - id: post # 页面中高亮的 menu_id
+      theme: '#1BCDFC' # 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
+      icon: solar:documents-bold-duotone # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
+      title: 博客 # 标题
+      url: / # 跳转链接，支持相对路径和绝对路径
+    - id: wiki
+      theme: '#3DC550'
+      icon: solar:notebook-bookmark-bold-duotone
+      title: 文档
+      url: /wiki/
+    - id: explore
+      theme: '#FA6400'
+      icon: solar:planet-bold-duotone
+      title: 探索
+      url: /explore/
+    - id: social
+      theme: '#F44336'
+      icon: solar:chat-square-like-bold-duotone
+      title: 社交
+      url: /friends/
+style:
+  font-size:
+    root: 17px
+    body: 1rem # 15px
+    code: 90% # 14px
+    codeblock: .8rem # 13px
+  font-family:
+    logo: 'system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
+    body: '"LXGW WenKai Screen","Microsoft Yahei", "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", -apple-system, Arial, "WenQuanYi Micro Hei", sans-serif'
+    code: '"Hack",Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
+    codeblock: 'Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
+    text-align: left # justify/left/center/right
+  color:
+  # 动态颜色（会根据明暗主题重设明度值，只用关心色相和饱和度即可）
+    background: 'hsl(212 16% 98%)' # 浅色背景颜色
+    block: 'hsl(212 8% 95%)' # 块背景颜色
+    code: 'hsl(14 100% 48%)' # 行内代码颜色
+    text: 'hsl(0 0% 20%)' # 文本颜色
+    # 主题色配置（不会根据明暗动态调整，请设置为通用的颜色）
+    theme: 'hsl(192 98% 55%)' # 主题色
+    accent: 'hsl(14 100% 57%)' # 强调色
+    link: 'hsl(207 90% 54%)' # 超链接颜色
+    button: 'hsl(192 98% 55%)' # 按钮颜色
+    hover: 'hsl(14 100% 57%)' # 按钮高亮颜色
+# 站点主结构树
+site_tree:
+  # -- 列表类页面 -- #
+  # 主页配置
+  home:
+    leftbar: welcome, recent
+    rightbar: timeline
+  # 博客列表页配置
+  index_blog:
+    base_dir: blog # 只影响自动生成的页面路径
+    menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
+    leftbar: welcome, recent # for categories/tags/archives
+    rightbar: timeline
+    nav_tabs:  # 近期发布 分类 标签 专栏 归档 and ...
+      # '朋友文章': /friends/rss/
+  # 博客专栏列表页配置
+  index_topic:
+    base_dir: topic # 只影响自动生成的页面路径
+    menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 topic 的页面默认使用这里配置的 menu_id
+  # 文档列表页配置
+  index_wiki:
+    base_dir: wiki # 只影响自动生成的页面路径
+    menu_id: wiki # 未在 front-matter 中指定 menu_id 时，layout 为 wiki 的页面默认使用这里配置的 menu_id
+    leftbar: ghissues, related, recent # for wiki
+    rightbar: timeline
+    nav_tabs:
+      # 'more': https://github.com/xaoxuu
+
+copycode:
+  enable: true
+  js: /js/plugins/copycode.js
+  default_text: 'Copy' # 按钮显示文字
+  success_text: 'Copied' # 复制成功信息
+
+######## Tag Plugins ########
+tag_plugins:
+  # {% image %}
+  image:
+    fancybox: true
+
+footer:
+  social:
+    github:
+      icon: '<img src="https://f005.backblazeb2.com/file/img-forWeb/uPic/github-142-svgrepo-com.svg"/>'
+      url: https://github.com/parisyl
+    bilibili:
+      icon: '<img src="https://f005.backblazeb2.com/file/img-forWeb/uPic/bilibili-svgrepo-com.svg"/>'
+      url: https://space.bilibili.com/283719634
+    twiter:
+      icon: '<img src="https://f005.backblazeb2.com/file/img-forWeb/uPic/twitter-154-svgrepo-com.svg"/>'
+      url: https://twitter.com/Cetarine
+    weibo:
+      icon: '<img src="https://f005.backblazeb2.com/file/img-forWeb/uPic/weibo-fill-svgrepo-com.svg"/>'
+      url: https://weibo.com/u/6483866500
+    mail:
+      icon: '<img src="https://f005.backblazeb2.com/file/img-forWeb/uPic/mail-svgrepo-com.svg"/>'
+      url: mailto:ieep.roon@gmail.com
+  content: # 支持 Markdown 格式
