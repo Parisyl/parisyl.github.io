@@ -1,0 +1,1454 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.27.0" theme-name="Stellar" theme-version="1.27.0">
+  
+  <meta name="generator" content="Hexo 7.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>我的NeoVIM配置 - Paris' Website</title>
+
+  
+    <meta name="description" content="安装此配置后你需要做的事 安装此配置后你可能想做的事 首先 Python 程序调试 (通过 vimspector 实现) 配置 Python 路径 标签表 FZF 其它…   快捷键 1 基础编辑器特性 1.1 最基本的键位 1.2 改变了的光标移动方式 1.3 改变了插入模式的键位 1.4 改变了在普通模式下的操作键位 1.5 其它在普通模式下有用的键位 1.6 增加了在可视模式下的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的NeoVIM配置">
+<meta property="og:url" content="http://example.com/2023/06/07/MyNeovim/index.html">
+<meta property="og:site_name" content="Paris&#39; Website">
+<meta property="og:description" content="安装此配置后你需要做的事 安装此配置后你可能想做的事 首先 Python 程序调试 (通过 vimspector 实现) 配置 Python 路径 标签表 FZF 其它…   快捷键 1 基础编辑器特性 1.1 最基本的键位 1.2 改变了的光标移动方式 1.3 改变了插入模式的键位 1.4 改变了在普通模式下的操作键位 1.5 其它在普通模式下有用的键位 1.6 增加了在可视模式下的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/theniceboy/nvim/master/demo.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/251450/55285193-400a9000-53b9-11e9-8cff-ffe4983c5947.gif">
+<meta property="og:image" content="https://raw.github.com/SirVer/ultisnips/master/doc/demo.gif">
+<meta property="og:image" content="https://puremourning.github.io/vimspector-web/img/vimspector-overview.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/1709861/64966850-1e9f5100-d8d2-11e9-9490-438c6d1cf378.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/17562139/74416173-b0aa8600-4e7f-11ea-83b5-31c07c384af1.gif">
+<meta property="og:image" content="https://jesseleite.com/uploads/posts/2/tag-finder-opt.gif">
+<meta property="og:image" content="https://i.imgur.com/yU6qbU5.gif">
+<meta property="og:image" content="https://camo.githubusercontent.com/56430626a5444ea2f0249d71f9288775277c7f5d/68747470733a2f2f73697465732e676f6f676c652e636f6d2f736974652f6d6262696c6c2f756e646f747265655f6e65772e706e67">
+<meta property="og:image" content="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example1.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example2.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example3.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example4.gif">
+<meta property="og:image" content="https://two-wrongs.com/image/surround_vim.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/junegunn/i/master/easy-align/equals.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/mzlogin/vim-markdown-toc/master/screenshots/english.gif">
+<meta property="og:image" content="https://f.cloud.github.com/assets/3797062/2039359/a8e938d6-899f-11e3-8789-60025ea83656.gif">
+<meta property="og:image" content="https://user-images.githubusercontent.com/8850248/56469894-14d40780-6472-11e9-802f-729ac53bd4d5.gif">
+<meta property="og:image" content="https://camo.githubusercontent.com/bc2bf1746e30c72d7ff5b79331231e8c388d068a/68747470733a2f2f7261772e6769746875622e636f6d2f4d617474657347726f656765722f76696d2d626f6f6b6d61726b732f6d61737465722f707265766965772e676966">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/9823254/20861878/77dd1882-b9b4-11e6-9b48-8bc60f3d7ec0.gif">
+<meta property="og:image" content="https://user-images.githubusercontent.com/25827968/42945393-96c662da-8b68-11e8-8279-5bcd2e956ca9.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/airblade/vim-gitgutter/master/screenshot.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/wiki/itchyny/calendar.vim/image/image.png">
+<meta property="og:image" content="https://raw.github.com/junegunn/i/master/goyo.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/20282795/72232547-b56be800-35fc-11ea-980a-3402fea13ec1.png">
+<meta property="article:published_time" content="2023-06-07T09:24:25.000Z">
+<meta property="article:modified_time" content="2024-03-19T02:56:42.083Z">
+<meta property="article:author" content="Paris">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/theniceboy/nvim/master/demo.png">
+  
+  
+  
+  <meta name="keywords" content="vim">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.27.0">
+
+  
+    <link rel="shortcut icon" href="https://f005.backblazeb2.com/file/img-forWeb/uPic/IMG_0384.JPG">
+  
+
+  
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3/build/web/hack.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://f005.backblazeb2.com/file/img-forWeb/uPic/IMG_0384.JPG" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Paris' Website</div><div class="sub normal cap">个人博客</div><div class="sub hover cap" style="opacity:0"> created by Paris</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="文档" href="/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="探索" href="/explore/" style="color:#FA6400"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M20 12a8 8 0 1 1-16 0a8 8 0 0 1 16 0" opacity=".5"/><path fill="currentColor" d="M17.712 5.453c1.047-.193 2.006-.259 2.797-.152c.77.103 1.536.393 1.956 1.064c.446.714.312 1.542-.012 2.258c-.33.728-.918 1.499-1.672 2.268c-1.516 1.547-3.836 3.226-6.597 4.697c-2.763 1.472-5.495 2.484-7.694 2.92c-1.095.217-2.098.299-2.923.201c-.8-.095-1.6-.383-2.032-1.075c-.47-.752-.296-1.63.07-2.379c.375-.768 1.032-1.586 1.872-2.403L4 12.416c0 .219.083.71.168 1.146c.045.23.09.444.123.596c-.652.666-1.098 1.263-1.339 1.756c-.277.567-.208.825-.145.925c.072.116.305.305.937.38c.609.073 1.44.018 2.455-.183c2.02-.4 4.613-1.351 7.28-2.772c2.667-1.42 4.85-3.015 6.23-4.423c.694-.707 1.15-1.334 1.377-1.836c.233-.515.167-.75.107-.844c-.07-.112-.289-.294-.883-.374c-.542-.072-1.272-.041-2.163.112L16.87 5.656c.338-.101.658-.17.842-.203"/></svg></a><a class="nav-item" title="社交" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2023/05/28/myTmux/"><span class="title">我的TMUX配置</span></a><a class="item title" href="/2023/06/07/MyNeovim/"><span class="title">我的NeoVIM配置</span></a><a class="item title" href="/2024/03/18/Bilibili-Old-Better/"><span class="title">Safari上更好的Bilibili-Old</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/parisyl" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://f005.backblazeb2.com/file/img-forWeb/uPic/github-142-svgrepo-com.svg"/></a><a class="social" href="https://space.bilibili.com/283719634" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://f005.backblazeb2.com/file/img-forWeb/uPic/bilibili-svgrepo-com.svg"/></a><a class="social" href="https://twitter.com/Cetarine" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://f005.backblazeb2.com/file/img-forWeb/uPic/twitter-154-svgrepo-com.svg"/></a><a class="social" href="https://weibo.com/u/6483866500" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://f005.backblazeb2.com/file/img-forWeb/uPic/weibo-fill-svgrepo-com.svg"/></a><a class="social" href="mailto:ieep.roon@gmail.com" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://f005.backblazeb2.com/file/img-forWeb/uPic/mail-svgrepo-com.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top"><img class="bg lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://f005.backblazeb2.com/file/img-forWeb/uPic/noqr1D.png">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2023-06-07T09:24:25.000Z">2023-06-07</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-03-19T02:56:42.083Z">2024-03-19</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>我的NeoVIM配置</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><br>
+<center><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/theniceboy/nvim/master/demo.png"></center>
+
+<!-- TOC GFM -->
+
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%AD%A4%E9%85%8D%E7%BD%AE%E5%90%8E%E4%BD%A0%E9%9C%80%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B">安装此配置后你需要做的事</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%AD%A4%E9%85%8D%E7%BD%AE%E5%90%8E%E4%BD%A0%E5%8F%AF%E8%83%BD%E6%83%B3%E5%81%9A%E7%9A%84%E4%BA%8B">安装此配置后你可能想做的事</a><ul>
+<li><a href="#%E9%A6%96%E5%85%88">首先</a></li>
+<li><a href="#python-%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95-%E9%80%9A%E8%BF%87-vimspector-%E5%AE%9E%E7%8E%B0">Python 程序调试 (通过 <code>vimspector</code> 实现)</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE-python-%E8%B7%AF%E5%BE%84">配置 <code>Python</code> 路径</a></li>
+<li><a href="#%E6%A0%87%E7%AD%BE%E8%A1%A8">标签表</a></li>
+<li><a href="#fzf">FZF</a></li>
+<li><a href="#%E5%85%B6%E5%AE%83">其它…</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a><ul>
+<li><a href="#1-%E5%9F%BA%E7%A1%80%E7%BC%96%E8%BE%91%E5%99%A8%E7%89%B9%E6%80%A7">1 基础编辑器特性</a><ul>
+<li><a href="#11-%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E9%94%AE%E4%BD%8D">1.1 最基本的键位</a></li>
+<li><a href="#12-%E6%94%B9%E5%8F%98%E4%BA%86%E7%9A%84%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8%E6%96%B9%E5%BC%8F">1.2 改变了的光标移动方式</a></li>
+<li><a href="#13-%E6%94%B9%E5%8F%98%E4%BA%86%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E7%9A%84%E9%94%AE%E4%BD%8D">1.3 改变了插入模式的键位</a></li>
+<li><a href="#14-%E6%94%B9%E5%8F%98%E4%BA%86%E5%9C%A8%E6%99%AE%E9%80%9A%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E9%94%AE%E4%BD%8D">1.4 改变了在普通模式下的操作键位</a></li>
+<li><a href="#15-%E5%85%B6%E5%AE%83%E5%9C%A8%E6%99%AE%E9%80%9A%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%9C%89%E7%94%A8%E7%9A%84%E9%94%AE%E4%BD%8D">1.5 其它在普通模式下有用的键位</a></li>
+<li><a href="#16-%E5%A2%9E%E5%8A%A0%E4%BA%86%E5%9C%A8%E5%8F%AF%E8%A7%86%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%91%BD%E4%BB%A4">1.6 增加了在可视模式下的命令</a></li>
+</ul>
+</li>
+<li><a href="#2-%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86">2 窗口管理</a><ul>
+<li><a href="#21-%E9%80%9A%E8%BF%87%E5%88%86%E8%A3%82%E5%B1%8F%E5%B9%95%E5%88%9B%E9%80%A0%E7%AA%97%E5%8F%A3">2.1 通过分裂屏幕创造窗口</a></li>
+<li><a href="#22-%E5%88%87%E6%8D%A2%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AA%97%E5%8F%A3">2.2 切换不同的窗口</a></li>
+<li><a href="#23-%E4%B8%BA%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AA%97%E5%8F%A3%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F">2.3 为不同的窗口调整大小</a></li>
+<li><a href="#24-%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3">2.4 关闭窗口</a></li>
+</ul>
+</li>
+<li><a href="#3-%E6%A0%87%E7%AD%BE%E9%A1%B5%E7%AE%A1%E7%90%86">3 标签页管理</a></li>
+<li><a href="#4-%E7%BB%88%E7%AB%AF%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE">4 终端键盘快捷键</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8F%92%E4%BB%B6%E5%BF%AB%E6%8D%B7%E9%94%AE-%E6%88%AA%E5%9B%BE%E5%8A%A8%E5%9B%BE%E5%B7%B2%E7%BB%8F%E5%87%86%E5%A4%87%E5%A5%BD">插件快捷键 (截图&#x2F;动图已经准备好！)</a><ul>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8">自动补全</a><ul>
+<li><a href="#coc-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8">COC (自动补全)</a></li>
+<li><a href="#ultisnips">Ultisnips</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95">代码调试</a><ul>
+<li><a href="#vimspector-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%8F%92%E4%BB%B6">vimspector (代码调试插件)</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88">文件浏览</a><ul>
+<li><a href="#coc-explorer---%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8">coc-explorer - 文件浏览器</a></li>
+<li><a href="#rnvimr---%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8">rnvimr - 文件浏览器</a></li>
+<li><a href="#fzf---%E6%A8%A1%E7%B3%8A%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE%E5%99%A8">FZF - 模糊文件查找器</a></li>
+<li><a href="#xtabline---%E7%B2%BE%E8%87%B4%E7%9A%84%E9%A1%B6%E6%A0%8F">xtabline - 精致的顶栏</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%87%E5%AD%97%E7%BC%96%E8%BE%91">文字编辑</a><ul>
+<li><a href="#vim-table-mode">vim-table-mode</a></li>
+<li><a href="#undotree">Undotree</a></li>
+<li><a href="#vim-multiple-cursors">vim-multiple-cursors</a></li>
+<li><a href="#vim-surround">vim-surround</a></li>
+<li><a href="#vim-subversive">vim-subversive</a></li>
+<li><a href="#vim-easy-align">vim-easy-align</a></li>
+<li><a href="#autoformat">AutoFormat</a></li>
+<li><a href="#vim-markdown-toc-%E4%B8%BA-markdown-%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E7%9B%AE%E5%BD%95">vim-markdown-toc (为 Markdown 文件生成目录)</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%86%85%E5%AF%BC%E8%88%AA">缓冲区内导航</a><ul>
+<li><a href="#vim-easy-motion">vim-easy-motion</a></li>
+<li><a href="#vistavim">Vista.vim</a></li>
+<li><a href="#vim-signiture---%E4%B9%A6%E7%AD%BE">vim-signiture - 书签</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%9B%BF%E6%8D%A2">查找与替换</a><ul>
+<li><a href="#farvim---%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%9B%BF%E6%8D%A2">Far.vim - 查找与替换</a></li>
+</ul>
+</li>
+<li><a href="#git-%E7%9B%B8%E5%85%B3">Git 相关</a><ul>
+<li><a href="#vim-gitgutter">vim-gitgutter</a></li>
+<li><a href="#fzf-gitignore">fzf-gitignore</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B6%E5%AE%83-1">其它</a><ul>
+<li><a href="#vim-calendar">vim-calendar</a></li>
+<li><a href="#goyo---%E4%B8%8D%E4%BC%9A%E5%88%86%E5%BF%83%E5%9C%B0%E5%B7%A5%E4%BD%9C">Goyo - 不会分心地工作</a></li>
+<li><a href="#sudavim">suda.vim</a></li>
+<li><a href="#coc-translator">coc-translator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5%E8%A1%A5%E5%85%A8">自定义代码片段补全</a><ul>
+<li><a href="#markdown">Markdown</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%80%E4%BA%9B%E5%A5%87%E6%80%AA%E7%9A%84%E4%B8%9C%E8%A5%BF">一些奇怪的东西</a><ul>
+<li><a href="#%E6%8C%89-tx-%E7%84%B6%E5%90%8E%E8%BE%93%E5%85%A5%E4%BD%A0%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%87%E5%AD%97">按 <code>tx</code> 然后输入你想要的文字</a></li>
+<li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9E%82%E7%9B%B4%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8">自定义垂直光标移动</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<h2 id="安装此配置后你需要做的事"><a href="#安装此配置后你需要做的事" class="headerlink" title="安装此配置后你需要做的事"></a>安装此配置后你需要做的事</h2><ul>
+<li><input disabled="" type="checkbox"> 安装 <code>pynvim</code> (使用 <code>pip</code>)</li>
+<li><input disabled="" type="checkbox"> 安装 <code>nodejs</code>, 然后在终端输入 <code>npm install -g neovim</code></li>
+<li><input disabled="" type="checkbox"> 安装 nerd-fonts (尽管它是可选的，但是安装之后看上去十分地酷)</li>
+</ul>
+<h2 id="安装此配置后你可能想做的事"><a href="#安装此配置后你可能想做的事" class="headerlink" title="安装此配置后你可能想做的事"></a>安装此配置后你可能想做的事</h2><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><ul>
+<li><input disabled="" type="checkbox"> 执行 <code>:checkhealth</code></li>
+</ul>
+<h3 id="Python-程序调试-通过-vimspector-实现"><a href="#Python-程序调试-通过-vimspector-实现" class="headerlink" title="Python 程序调试 (通过 vimspector 实现)"></a>Python 程序调试 (通过 <code>vimspector</code> 实现)</h3><ul>
+<li><input disabled="" type="checkbox"> 安装 <code>debugpy</code> (使用 <code>pip</code>)</li>
+</ul>
+<h3 id="配置-Python-路径"><a href="#配置-Python-路径" class="headerlink" title="配置 Python 路径"></a>配置 <code>Python</code> 路径</h3><ul>
+<li><input disabled="" type="checkbox"> 确保你安装了 Python</li>
+<li><input disabled="" type="checkbox"> 查看 <code>_machine_specific.vim</code> 文件</li>
+</ul>
+<h3 id="标签表"><a href="#标签表" class="headerlink" title="标签表"></a>标签表</h3><ul>
+<li><input disabled="" type="checkbox"> 安装 <code>ctags</code> 以获得类&#x2F;函数&#x2F;变量的三重支持</li>
+</ul>
+<h3 id="FZF"><a href="#FZF" class="headerlink" title="FZF"></a>FZF</h3><ul>
+<li><input disabled="" type="checkbox"> 安装 <code>fzf</code></li>
+<li><input disabled="" type="checkbox"> 安装 <code>ag</code> (<code>the_silver_searcher</code> 需要)</li>
+</ul>
+<h3 id="其它…"><a href="#其它…" class="headerlink" title="其它…"></a>其它…</h3><ul>
+<li><input disabled="" type="checkbox"> 安装 <code>figlet</code> 以输入 ASCII 艺术字</li>
+<li><input disabled="" type="checkbox"> 安装 <code>xclip</code> 以获得系统剪切板访问支持 (仅 <code>Linux</code> 与 <code>xorg</code> 需要)</li>
+</ul>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><h3 id="1-基础编辑器特性"><a href="#1-基础编辑器特性" class="headerlink" title="1 基础编辑器特性"></a>1 基础编辑器特性</h3><h4 id="1-1-最基本的键位"><a href="#1-1-最基本的键位" class="headerlink" title="1.1 最基本的键位"></a>1.1 最基本的键位</h4><p><strong><code>k</code></strong> : 切换至 <strong><code>插入</code></strong> : 一种模式 (在原版 Vim 中与 <code>i</code> 键相同)</p>
+<p><strong><code>Q</code></strong> : 退出当前 Vim 窗口 (在原版 Vim 中与命令 <code>:q</code> 相同)</p>
+<p><strong><code>S</code></strong> : 保存当前文件 (在原版 Vim 中与命令 <code>:w</code> 相同)</p>
+<p><strong><em>重要</em></strong></p>
+<p>  因为 <code>i</code> 键被改为了 <code>k</code> 键, 所有包含 <code>i</code> 键的命令都必须将 <code>i</code> 改为 <code>k</code> (比如 <code>ciw</code> 应被更正为 <code>ckw</code>)</p>
+<h4 id="1-2-改变了的光标移动方式"><a href="#1-2-改变了的光标移动方式" class="headerlink" title="1.2 改变了的光标移动方式"></a>1.2 改变了的光标移动方式</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+<th>等于 (QWERTY 键盘布局中的哪些键)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>u</code></td>
+<td>将光标向上移动一行</td>
+<td><code>k</code></td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>将光标向下移动一行</td>
+<td><code>j</code></td>
+</tr>
+<tr>
+<td><code>n</code></td>
+<td>将光标向左移动一格</td>
+<td><code>h</code></td>
+</tr>
+<tr>
+<td><code>i</code></td>
+<td>将光标向右移动一格</td>
+<td><code>l</code></td>
+</tr>
+<tr>
+<td><code>U</code></td>
+<td>将光标向上移动五行</td>
+<td><code>5k</code></td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>将光标向下移动五行</td>
+<td><code>5j</code></td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>将光标移至当前行的第一个字符</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>I</code></td>
+<td>将光标移至当前行的最后一个字符</td>
+<td><code>$</code></td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>u</code></td>
+<td>将视角向上移动五行而不移动光标</td>
+<td><code>Ctrl</code> <code>y</code></td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>e</code></td>
+<td>将视角向下移动五行而不移动光标</td>
+<td><code>Ctrl</code> <code>e</code></td>
+</tr>
+<tr>
+<td><code>h</code></td>
+<td>将光标移至当前单词的末尾</td>
+<td><code>e</code></td>
+</tr>
+<tr>
+<td><code>W</code></td>
+<td>将光标移至五个单词后的末尾</td>
+<td><code>5w</code></td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td>将光标移至五个单词前的开头</td>
+<td><code>5b</code></td>
+</tr>
+</tbody></table>
+<h4 id="1-3-改变了插入模式的键位"><a href="#1-3-改变了插入模式的键位" class="headerlink" title="1.3 改变了插入模式的键位"></a>1.3 改变了插入模式的键位</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl</code> <code>a</code></td>
+<td>将光标移至当前行的末尾</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>u</code></td>
+<td>将光标所在的字母移至当前行的末尾</td>
+</tr>
+</tbody></table>
+<h4 id="1-4-改变了在普通模式下的操作键位"><a href="#1-4-改变了在普通模式下的操作键位" class="headerlink" title="1.4 改变了在普通模式下的操作键位"></a>1.4 改变了在普通模式下的操作键位</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>l</code></td>
+<td><strong>撤销</strong></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td>反向缩进</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>缩进</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>SPACE</code></td>
+<td>删除下一个 <code>&lt;++&gt;</code> 并进入插入模式</td>
+</tr>
+</tbody></table>
+<h4 id="1-5-其它在普通模式下有用的键位"><a href="#1-5-其它在普通模式下有用的键位" class="headerlink" title="1.5 其它在普通模式下有用的键位"></a>1.5 其它在普通模式下有用的键位</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>r</code></td>
+<td><strong>编译&#x2F;运行当前文件</strong></td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>s</code> <code>c</code></td>
+<td>开关拼写检查</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>d</code> <code>w</code></td>
+<td>寻找近处的重复单词</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>t</code> <code>t</code></td>
+<td>将四个空格转换为制表符</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>o</code></td>
+<td>折叠代码</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>-</code></td>
+<td>上一个快速修复位置</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>+</code></td>
+<td>下一个快速修复位置</td>
+</tr>
+<tr>
+<td><code>\</code> <code>p</code></td>
+<td>显示当前文件的路径</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>/</code></td>
+<td>在当前窗口下方新建一个终端窗口</td>
+</tr>
+</tbody></table>
+<h4 id="1-6-增加了在可视模式下的命令"><a href="#1-6-增加了在可视模式下的命令" class="headerlink" title="1.6 增加了在可视模式下的命令"></a>1.6 增加了在可视模式下的命令</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Y</code></td>
+<td>复制选中文本至<strong>系统剪切板</strong></td>
+</tr>
+</tbody></table>
+<h3 id="2-窗口管理"><a href="#2-窗口管理" class="headerlink" title="2 窗口管理"></a>2 窗口管理</h3><h4 id="2-1-通过分裂屏幕创造窗口"><a href="#2-1-通过分裂屏幕创造窗口" class="headerlink" title="2.1 通过分裂屏幕创造窗口"></a>2.1 通过分裂屏幕创造窗口</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>s</code> <code>u</code></td>
+<td>新建一个分屏并把它放置在当前窗口的上面</td>
+</tr>
+<tr>
+<td><code>s</code> <code>e</code></td>
+<td>新建一个分屏并把它放置在当前窗口的下面</td>
+</tr>
+<tr>
+<td><code>s</code> <code>n</code></td>
+<td>新建一个分屏并把它放置在当前窗口的左边</td>
+</tr>
+<tr>
+<td><code>s</code> <code>i</code></td>
+<td>新建一个分屏并把它放置在当前窗口的右边</td>
+</tr>
+<tr>
+<td><code>s</code> <code>v</code></td>
+<td>将两个分屏垂直放置</td>
+</tr>
+<tr>
+<td><code>s</code> <code>h</code></td>
+<td>将两个分屏水平放置</td>
+</tr>
+<tr>
+<td><code>s</code> <code>r</code> <code>v</code></td>
+<td>将所有分屏垂直放置</td>
+</tr>
+<tr>
+<td><code>s</code> <code>r</code> <code>h</code></td>
+<td>将所有分屏水平放置</td>
+</tr>
+</tbody></table>
+<h4 id="2-2-切换不同的窗口"><a href="#2-2-切换不同的窗口" class="headerlink" title="2.2 切换不同的窗口"></a>2.2 切换不同的窗口</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SPACE</code> + <code>w</code></td>
+<td>移至下一个窗口</td>
+</tr>
+<tr>
+<td><code>SPACE</code> + <code>n</code></td>
+<td>移至左边的窗口</td>
+</tr>
+<tr>
+<td><code>SPACE</code> + <code>i</code></td>
+<td>移至右边的窗口</td>
+</tr>
+<tr>
+<td><code>SPACE</code> + <code>u</code></td>
+<td>移至上面的窗口</td>
+</tr>
+<tr>
+<td><code>SPACE</code> + <code>e</code></td>
+<td>移至下面的窗口</td>
+</tr>
+</tbody></table>
+<h4 id="2-3-为不同的窗口调整大小"><a href="#2-3-为不同的窗口调整大小" class="headerlink" title="2.3 为不同的窗口调整大小"></a>2.3 为不同的窗口调整大小</h4><p>用方向键更改当前窗口的大小</p>
+<h4 id="2-4-关闭窗口"><a href="#2-4-关闭窗口" class="headerlink" title="2.4 关闭窗口"></a>2.4 关闭窗口</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Q</code></td>
+<td>关闭当前窗口</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>q</code></td>
+<td>关闭当前窗口下面的窗口 (如果下面没有窗口，则当前窗口将关闭)</td>
+</tr>
+</tbody></table>
+<h3 id="3-标签页管理"><a href="#3-标签页管理" class="headerlink" title="3 标签页管理"></a>3 标签页管理</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>t</code> <code>u</code></td>
+<td>新建一个标签页</td>
+</tr>
+<tr>
+<td><code>t</code> <code>n</code></td>
+<td>移至左侧标签页</td>
+</tr>
+<tr>
+<td><code>t</code> <code>i</code></td>
+<td>移至右侧标签页</td>
+</tr>
+<tr>
+<td><code>t</code> <code>m</code> <code>n</code></td>
+<td>将当前标签页向左移动一格</td>
+</tr>
+<tr>
+<td><code>t</code> <code>m</code> <code>i</code></td>
+<td>将当前标签页向右移动一格</td>
+</tr>
+</tbody></table>
+<h3 id="4-终端键盘快捷键"><a href="#4-终端键盘快捷键" class="headerlink" title="4 终端键盘快捷键"></a>4 终端键盘快捷键</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl</code> <code>n</code></td>
+<td>退出终端输入模式</td>
+</tr>
+</tbody></table>
+<h2 id="插件快捷键-截图-动图已经准备好！"><a href="#插件快捷键-截图-动图已经准备好！" class="headerlink" title="插件快捷键 (截图&#x2F;动图已经准备好！)"></a>插件快捷键 (截图&#x2F;动图已经准备好！)</h2><h3 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a>自动补全</h3><h4 id="COC-自动补全"><a href="#COC-自动补全" class="headerlink" title="COC (自动补全)"></a><a target="_blank" rel="noopener" href="https://github.com/neoclide/coc.nvim">COC (自动补全)</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Space</code> <code>y</code></td>
+<td><strong>打开剪切板历史</strong></td>
+</tr>
+<tr>
+<td><code>gd</code></td>
+<td>列出定义列表</td>
+</tr>
+<tr>
+<td><code>gr</code></td>
+<td>列出参考列表</td>
+</tr>
+<tr>
+<td><code>gi</code></td>
+<td>待办事项清单</td>
+</tr>
+<tr>
+<td><code>gy</code></td>
+<td>转至类型定义</td>
+</tr>
+<tr>
+<td><code>Space</code> <code>r</code> <code>n</code></td>
+<td>重命名变量</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://user-images.githubusercontent.com/251450/55285193-400a9000-53b9-11e9-8cff-ffe4983c5947.gif" width="60%" />
+
+<h4 id="Ultisnips"><a href="#Ultisnips" class="headerlink" title="Ultisnips"></a><a target="_blank" rel="noopener" href="https://github.com/SirVer/ultisnips">Ultisnips</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl</code> <code>e</code></td>
+<td>召唤一个代码片段</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>n</code></td>
+<td>在一个代码片段中前移光标</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>e</code></td>
+<td>在一个代码片段中后移光标</td>
+</tr>
+</tbody></table>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.github.com/SirVer/ultisnips/master/doc/demo.gif" alt="GIF Demo"></p>
+<h3 id="代码调试"><a href="#代码调试" class="headerlink" title="代码调试"></a>代码调试</h3><h4 id="vimspector-代码调试插件"><a href="#vimspector-代码调试插件" class="headerlink" title="vimspector (代码调试插件)"></a><a target="_blank" rel="noopener" href="https://github.com/puremourning/vimspector">vimspector (代码调试插件)</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>F5</code></td>
+<td>继续调试，如果不在一个调试中则开始进行调试</td>
+</tr>
+<tr>
+<td><code>F3</code></td>
+<td>终止调试</td>
+</tr>
+<tr>
+<td><code>F4</code></td>
+<td>用相同的配置重新开始调试</td>
+</tr>
+<tr>
+<td><code>F6</code></td>
+<td>暂停调试</td>
+</tr>
+<tr>
+<td><code>F9</code></td>
+<td>在当前行上切换行的断点</td>
+</tr>
+<tr>
+<td><code>F8</code></td>
+<td>在光标下为表达式添加函数断点</td>
+</tr>
+<tr>
+<td><code>F10</code></td>
+<td>完成步骤</td>
+</tr>
+<tr>
+<td><code>F11</code></td>
+<td>下一步骤</td>
+</tr>
+<tr>
+<td><code>F12</code></td>
+<td>退出当前函数范围</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://puremourning.github.io/vimspector-web/img/vimspector-overview.png" width="60%" />
+
+<h3 id="文件浏览"><a href="#文件浏览" class="headerlink" title="文件浏览"></a>文件浏览</h3><h4 id="coc-explorer-文件浏览器"><a href="#coc-explorer-文件浏览器" class="headerlink" title="coc-explorer - 文件浏览器"></a><a target="_blank" rel="noopener" href="https://github.com/weirongxu/coc-explorer">coc-explorer - 文件浏览器</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>tt</code></td>
+<td><strong>打开文件浏览器</strong></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>查看帮助 (在浏览器中)</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://user-images.githubusercontent.com/1709861/64966850-1e9f5100-d8d2-11e9-9490-438c6d1cf378.png" width="60%" />
+
+<h4 id="rnvimr-文件浏览器"><a href="#rnvimr-文件浏览器" class="headerlink" title="rnvimr - 文件浏览器"></a><a target="_blank" rel="noopener" href="https://github.com/kevinhwang91/rnvimr">rnvimr - 文件浏览器</a></h4><ul>
+<li><input disabled="" type="checkbox"> 确定你已经安装了 ranger</li>
+</ul>
+<p>按 <code>R</code> 键打开 ranger (文件选择器)</p>
+<p>在 rnvimr (ranger) 中, 你可以:</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl</code> <code>t</code></td>
+<td>在新标签页中打开文件</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>x</code></td>
+<td>上下分裂打开当前文件</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>v</code></td>
+<td>左右分裂打开所选文件</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://user-images.githubusercontent.com/17562139/74416173-b0aa8600-4e7f-11ea-83b5-31c07c384af1.gif" width="60%" />
+
+<h4 id="FZF-模糊文件查找器"><a href="#FZF-模糊文件查找器" class="headerlink" title="FZF - 模糊文件查找器"></a><a target="_blank" rel="noopener" href="https://github.com/junegunn/fzf.vim">FZF - 模糊文件查找器</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl</code> <code>p</code></td>
+<td><strong>模糊查找文件</strong></td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>u</code></td>
+<td>向上移动一格</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>e</code></td>
+<td>向下移动一格</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>w</code></td>
+<td>模糊查找缓冲区</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>f</code></td>
+<td>模糊查找文件内容</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>h</code></td>
+<td>模糊查找历史文件</td>
+</tr>
+<tr>
+<td><code>Ctrl</code> <code>t</code></td>
+<td>模糊查找标签</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://jesseleite.com/uploads/posts/2/tag-finder-opt.gif" width="60%" />
+
+<h4 id="xtabline-精致的顶栏"><a href="#xtabline-精致的顶栏" class="headerlink" title="xtabline - 精致的顶栏"></a><a target="_blank" rel="noopener" href="https://github.com/mg979/vim-xtabline">xtabline - 精致的顶栏</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>to</code></td>
+<td>开关循环标签页模式</td>
+</tr>
+<tr>
+<td><code>\p</code></td>
+<td>显示当前路径</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://i.imgur.com/yU6qbU5.gif" width="60%" />
+
+<h3 id="文字编辑"><a href="#文字编辑" class="headerlink" title="文字编辑"></a>文字编辑</h3><h4 id="vim-table-mode"><a href="#vim-table-mode" class="headerlink" title="vim-table-mode"></a><a target="_blank" rel="noopener" href="https://github.com/dhruvasagar/vim-table-mode">vim-table-mode</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>SPACE</code> <code>t</code> <code>m</code></td>
+<td>开关表格模式</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>t</code> <code>r</code></td>
+<td>重组表格</td>
+</tr>
+</tbody></table>
+<p>See <code>:help table-mode.txt</code> for more.</p>
+<h4 id="Undotree"><a href="#Undotree" class="headerlink" title="Undotree"></a><a target="_blank" rel="noopener" href="https://github.com/mbbill/undotree">Undotree</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Shift</code> + <code>L</code></td>
+<td>打开撤回历史</td>
+</tr>
+<tr>
+<td><code>u</code></td>
+<td>更新的记录</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>更老的记录</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://camo.githubusercontent.com/56430626a5444ea2f0249d71f9288775277c7f5d/68747470733a2f2f73697465732e676f6f676c652e636f6d2f736974652f6d6262696c6c2f756e646f747265655f6e65772e706e67" width="60%" />
+
+<h4 id="vim-multiple-cursors"><a href="#vim-multiple-cursors" class="headerlink" title="vim-multiple-cursors"></a><a target="_blank" rel="noopener" href="https://github.com/terryma/vim-multiple-cursors">vim-multiple-cursors</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Ctrl</code>+<code>k</code></td>
+<td><strong>选择下一个键 (多重光标)</strong></td>
+</tr>
+<tr>
+<td><code>Alt</code>+<code>k</code></td>
+<td><strong>选择所有键 (多重光标)</strong></td>
+</tr>
+<tr>
+<td><code>Ctrl</code>+<code>p</code></td>
+<td>选择上一个键</td>
+</tr>
+<tr>
+<td><code>Ctrl</code>+<code>s</code></td>
+<td>跳过键</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>退出多重光标</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example1.gif" width="60%" />
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example2.gif" width="60%" />
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example3.gif" width="60%" />
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/terryma/vim-multiple-cursors/master/assets/example4.gif" width="60%" />
+
+<h4 id="vim-surround"><a href="#vim-surround" class="headerlink" title="vim-surround"></a><a target="_blank" rel="noopener" href="https://github.com/tpope/vim-surround">vim-surround</a></h4><p>想要添加包裹符号 (<code>string</code> -&gt; <code>&quot;string&quot;</code>):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string</span><br></pre></td></tr></table></figure>
+<p>按下: <code>yskw&#39;</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;string&#x27;</span><br></pre></td></tr></table></figure>
+<p>想要修改包裹符号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x27;string&#x27;</span><br></pre></td></tr></table></figure>
+<p>按下: <code>cs&#39;&quot;</code>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;string&quot;</span><br></pre></td></tr></table></figure>
+
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://two-wrongs.com/image/surround_vim.gif" width="60%" />
+
+<h4 id="vim-subversive"><a href="#vim-subversive" class="headerlink" title="vim-subversive"></a><a target="_blank" rel="noopener" href="https://github.com/svermeulen/vim-subversive">vim-subversive</a></h4><p>新的操作员: <code>s</code>:</p>
+<p>您可以执行 <code>s&lt;操作&gt;</code>来使用用默认的寄存器 (或提供的显式寄存器) 的内容替换运动提供的文本对象。例如，您可以执行 <code>skw</code> 将光标下的当前单词替换为当前yank，或执行 <code>skp</code> 替换段落，依此类推</p>
+<h4 id="vim-easy-align"><a href="#vim-easy-align" class="headerlink" title="vim-easy-align"></a><a target="_blank" rel="noopener" href="https://github.com/junegunn/vim-easy-align">vim-easy-align</a></h4><p>在普通或可视模式下按 <code>ga</code> + <strong>符号</strong> 可以根据 <strong>符号</strong>对齐文本</p>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/junegunn/i/master/easy-align/equals.gif" width="60%" />
+
+<h4 id="AutoFormat"><a href="#AutoFormat" class="headerlink" title="AutoFormat"></a><a target="_blank" rel="noopener" href="https://github.com/Chiel92/vim-autoformat">AutoFormat</a></h4><p>按 <code>\</code> <code>f</code> 开启格式化模式</p>
+<h4 id="vim-markdown-toc-为-Markdown-文件生成目录"><a href="#vim-markdown-toc-为-Markdown-文件生成目录" class="headerlink" title="vim-markdown-toc (为 Markdown 文件生成目录)"></a><a target="_blank" rel="noopener" href="https://github.com/mzlogin/vim-markdown-toc">vim-markdown-toc (为 Markdown 文件生成目录)</a></h4><p>在 <code>Markdown</code> 文件中, 按下 <code>:Gen</code> 打开菜单，你将会看到可选选项</p>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/mzlogin/vim-markdown-toc/master/screenshots/english.gif" width="60%" />
+
+<h3 id="缓冲区内导航"><a href="#缓冲区内导航" class="headerlink" title="缓冲区内导航"></a>缓冲区内导航</h3><h4 id="vim-easy-motion"><a href="#vim-easy-motion" class="headerlink" title="vim-easy-motion"></a><a target="_blank" rel="noopener" href="https://github.com/easymotion/vim-easymotion">vim-easy-motion</a></h4><p>按 <code>&#39;</code> 键和一个 <code>字母</code> 跳转至 <code>字母</code> (类似 Emacs 的 <a target="_blank" rel="noopener" href="https://www.emacswiki.org/emacs/AceJump">AceJump</a>)</p>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://f.cloud.github.com/assets/3797062/2039359/a8e938d6-899f-11e3-8789-60025ea83656.gif" width="60%" />
+
+<h4 id="Vista-vim"><a href="#Vista-vim" class="headerlink" title="Vista.vim"></a><a target="_blank" rel="noopener" href="https://github.com/liuchengxu/vista.vim">Vista.vim</a></h4><p>按 <code>T</code> 打开函数与变量列表</p>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://user-images.githubusercontent.com/8850248/56469894-14d40780-6472-11e9-802f-729ac53bd4d5.gif" width="60%" />
+
+<h4 id="vim-signiture-书签"><a href="#vim-signiture-书签" class="headerlink" title="vim-signiture - 书签"></a><a target="_blank" rel="noopener" href="https://github.com/kshenoy/vim-signature">vim-signiture - 书签</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>m&lt;letter&gt;</code></td>
+<td>在当前行添加或删除书签</td>
+</tr>
+<tr>
+<td><code>m/</code></td>
+<td>列出所有书签</td>
+</tr>
+<tr>
+<td><code>mSPACE</code></td>
+<td>在缓冲区中跳转到下一个书签</td>
+</tr>
+<tr>
+<td><code>mt</code></td>
+<td>在当前行添加或删除书签</td>
+</tr>
+<tr>
+<td><code>ma</code></td>
+<td>在当前行添加注释</td>
+</tr>
+<tr>
+<td><code>ml</code></td>
+<td>显示所有的书签</td>
+</tr>
+<tr>
+<td><code>mi</code></td>
+<td>下一个书签</td>
+</tr>
+<tr>
+<td><code>mn</code></td>
+<td>上一个书签</td>
+</tr>
+<tr>
+<td><code>mC</code></td>
+<td>清除一个书签</td>
+</tr>
+<tr>
+<td><code>mX</code></td>
+<td>清除所有书签</td>
+</tr>
+<tr>
+<td><code>mu</code></td>
+<td>将书签往上提一行</td>
+</tr>
+<tr>
+<td><code>me</code></td>
+<td>将书签往下拉一行</td>
+</tr>
+<tr>
+<td><code>SPC</code> <code>g</code></td>
+<td>将书签移至任意行</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://camo.githubusercontent.com/bc2bf1746e30c72d7ff5b79331231e8c388d068a/68747470733a2f2f7261772e6769746875622e636f6d2f4d617474657347726f656765722f76696d2d626f6f6b6d61726b732f6d61737465722f707265766965772e676966" width="60%" />
+
+<h3 id="查找与替换"><a href="#查找与替换" class="headerlink" title="查找与替换"></a>查找与替换</h3><h4 id="Far-vim-查找与替换"><a href="#Far-vim-查找与替换" class="headerlink" title="Far.vim - 查找与替换"></a><a target="_blank" rel="noopener" href="https://github.com/brooth/far.vim">Far.vim - 查找与替换</a></h4><p>按下 <code>SPACE</code> <code>f</code> <code>r</code> 在工作目录中搜索</p>
+<img class="lazy" alt="Gif" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cloud.githubusercontent.com/assets/9823254/20861878/77dd1882-b9b4-11e6-9b48-8bc60f3d7ec0.gif" width="60%" />
+
+<h3 id="Git-相关"><a href="#Git-相关" class="headerlink" title="Git 相关"></a>Git 相关</h3><h4 id="vim-gitgutter"><a href="#vim-gitgutter" class="headerlink" title="vim-gitgutter"></a><a target="_blank" rel="noopener" href="https://github.com/airblade/vim-gitgutter">vim-gitgutter</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>H</code></td>
+<td><strong>在当前行显示 Git 代码块</strong></td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>g</code> <code>-</code></td>
+<td>去往上一个 Git 代码块</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>g</code> <code>+</code></td>
+<td>去往下一个 Git 代码块</td>
+</tr>
+<tr>
+<td><code>SPACE</code> <code>g</code> <code>f</code></td>
+<td>折叠所有除代码块以外的行</td>
+</tr>
+</tbody></table>
+<h4 id="fzf-gitignore"><a href="#fzf-gitignore" class="headerlink" title="fzf-gitignore"></a><a target="_blank" rel="noopener" href="https://github.com/fszymanski/fzf-gitignore">fzf-gitignore</a></h4><p>按 <code>Space</code> <code>g</code> <code>i</code> 来创建一个 <code>.gitignore</code> 文件</p>
+<img class="lazy" alt="Png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://user-images.githubusercontent.com/25827968/42945393-96c662da-8b68-11e8-8279-5bcd2e956ca9.png" width="60%" />
+
+<img class="lazy" alt="Png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/airblade/vim-gitgutter/master/screenshot.png" width="60%" />
+
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><h4 id="vim-calendar"><a href="#vim-calendar" class="headerlink" title="vim-calendar"></a><a target="_blank" rel="noopener" href="https://github.com/itchyny/calendar.vim">vim-calendar</a></h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\</code> <code>\</code></td>
+<td>显示时钟</td>
+</tr>
+<tr>
+<td><code>\</code> <code>c</code></td>
+<td>显示日历</td>
+</tr>
+</tbody></table>
+<img class="lazy" alt="Png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.githubusercontent.com/wiki/itchyny/calendar.vim/image/image.png" width="60%" />
+
+<h4 id="Goyo-不会分心地工作"><a href="#Goyo-不会分心地工作" class="headerlink" title="Goyo - 不会分心地工作"></a><a target="_blank" rel="noopener" href="https://github.com/junegunn/goyo.vim">Goyo - 不会分心地工作</a></h4><p>按下 <code>g</code> <code>y</code> 开关 Goyo</p>
+<img class="lazy" alt="Png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://raw.github.com/junegunn/i/master/goyo.png" width="60%" />
+
+<h4 id="suda-vim"><a href="#suda-vim" class="headerlink" title="suda.vim"></a><a target="_blank" rel="noopener" href="https://github.com/lambdalisue/suda.vim">suda.vim</a></h4><p>想要忘记以前痛苦的 <code>sudo vim ...</code>? 只需要在 Vim 中执行 <code>:sudowrite</code> 或者 <code>:sw</code></p>
+<h4 id="coc-translator"><a href="#coc-translator" class="headerlink" title="coc-translator"></a><a target="_blank" rel="noopener" href="https://github.com/voldikss/coc-translator">coc-translator</a></h4><p>按下 <code>ts</code> 来 <strong>翻译光标所在的单词</strong>.</p>
+<img class="lazy" alt="Png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://user-images.githubusercontent.com/20282795/72232547-b56be800-35fc-11ea-980a-3402fea13ec1.png" width="60%" />
+
+<h2 id="自定义代码片段补全"><a href="#自定义代码片段补全" class="headerlink" title="自定义代码片段补全"></a>自定义代码片段补全</h2><h3 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h3><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>创建的文字</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>,n</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>,b</code></td>
+<td><strong>粗体</strong>文字</td>
+</tr>
+<tr>
+<td><code>,s</code></td>
+<td><del>被划去</del>的文字</td>
+</tr>
+<tr>
+<td><code>,i</code></td>
+<td><em>斜体</em>文字</td>
+</tr>
+<tr>
+<td><code>,d</code></td>
+<td><code>代码块</code></td>
+</tr>
+<tr>
+<td><code>,c</code></td>
+<td>大的 <code>代码块</code></td>
+</tr>
+<tr>
+<td><code>,m</code></td>
+<td>- [ ] 清单</td>
+</tr>
+<tr>
+<td><code>,p</code></td>
+<td>图片</td>
+</tr>
+<tr>
+<td><code>,a</code></td>
+<td><a href="">链接</a></td>
+</tr>
+<tr>
+<td><code>,1</code></td>
+<td># H1</td>
+</tr>
+<tr>
+<td><code>,2</code></td>
+<td>## H2</td>
+</tr>
+<tr>
+<td><code>,3</code></td>
+<td>### H3</td>
+</tr>
+<tr>
+<td><code>,4</code></td>
+<td>#### H4</td>
+</tr>
+<tr>
+<td><code>,l</code></td>
+<td>——–</td>
+</tr>
+</tbody></table>
+<p><code>,f</code> 去往下一个 <code>&lt;++&gt;</code> (占位符)</p>
+<p><code>,w</code> 去往下一个 <code>&lt;++&gt;</code> (占位符) 并帮你按下 <code>Enter</code></p>
+<h2 id="一些奇怪的东西"><a href="#一些奇怪的东西" class="headerlink" title="一些奇怪的东西"></a>一些奇怪的东西</h2><h3 id="按-tx-然后输入你想要的文字"><a href="#按-tx-然后输入你想要的文字" class="headerlink" title="按 tx 然后输入你想要的文字"></a>按 <code>tx</code> 然后输入你想要的文字</h3><p><code>tx Hello&lt;Enter&gt;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> _   _      _ _</span><br><span class="line">| | | | ___| | | ___</span><br><span class="line">| |_| |/ _ \ | |/ _ \</span><br><span class="line">|  _  |  __/ | | (_) |</span><br><span class="line">|_| |_|\___|_|_|\___/</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义垂直光标移动"><a href="#自定义垂直光标移动" class="headerlink" title="自定义垂直光标移动"></a>自定义垂直光标移动</h3><p>此 NeoVim 配置包含了一套对 Colemak 用户量身定制的垂直光标移动, 它位于 <code>cursor.vim</code> 中, 并且可以替代 “数字 + 上 &#x2F; 下” 的案件组合</p>
+<p>为了将光标向上移至 <code>x</code> 行, 可以按下 <code>[</code> 键, 并将 Colemak 键盘布局的中间行 (“arstdhneio”) 视为从 1 到 0 的数字, 按所需的数字, 再按下空格键以跳转至 <code>x</code> 行之上</p>
+<p>要向下移动光标, 按 <code>&#39;</code> 键而不是 <code>[</code> 键, 其余部分相同</p>
+<p>例:</p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[</code> <code>a</code> <code>o</code> <code>o</code> <code>SPACE</code></td>
+<td>将光标向上移动 100 行</td>
+</tr>
+<tr>
+<td><code>&#39;</code> <code>a</code> <code>r</code> <code>s</code> <code>SPACE</code></td>
+<td>将光标向下移动123行</td>
+</tr>
+<tr>
+<td><code>[</code> <code>d</code> <code>o</code> <code>SPACE</code></td>
+<td>将光标向上移动50行</td>
+</tr>
+</tbody></table>
+<p><strong>注意: 目前, 使用此移动方式, 你最多只能垂直移动 199 行!</strong></p>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/03/18/Bilibili-Old-Better/">Safari上更好的Bilibili-Old</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/05/28/myTmux/">我的TMUX配置</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"></div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A4%E9%85%8D%E7%BD%AE%E5%90%8E%E4%BD%A0%E9%9C%80%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B"><span class="toc-text">安装此配置后你需要做的事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A4%E9%85%8D%E7%BD%AE%E5%90%8E%E4%BD%A0%E5%8F%AF%E8%83%BD%E6%83%B3%E5%81%9A%E7%9A%84%E4%BA%8B"><span class="toc-text">安装此配置后你可能想做的事</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E5%85%88"><span class="toc-text">首先</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python-%E7%A8%8B%E5%BA%8F%E8%B0%83%E8%AF%95-%E9%80%9A%E8%BF%87-vimspector-%E5%AE%9E%E7%8E%B0"><span class="toc-text">Python 程序调试 (通过 vimspector 实现)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-Python-%E8%B7%AF%E5%BE%84"><span class="toc-text">配置 Python 路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E8%A1%A8"><span class="toc-text">标签表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FZF"><span class="toc-text">FZF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83%E2%80%A6"><span class="toc-text">其它…</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E7%BC%96%E8%BE%91%E5%99%A8%E7%89%B9%E6%80%A7"><span class="toc-text">1 基础编辑器特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E9%94%AE%E4%BD%8D"><span class="toc-text">1.1 最基本的键位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E6%94%B9%E5%8F%98%E4%BA%86%E7%9A%84%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">1.2 改变了的光标移动方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E6%94%B9%E5%8F%98%E4%BA%86%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E7%9A%84%E9%94%AE%E4%BD%8D"><span class="toc-text">1.3 改变了插入模式的键位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%94%B9%E5%8F%98%E4%BA%86%E5%9C%A8%E6%99%AE%E9%80%9A%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E6%93%8D%E4%BD%9C%E9%94%AE%E4%BD%8D"><span class="toc-text">1.4 改变了在普通模式下的操作键位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%85%B6%E5%AE%83%E5%9C%A8%E6%99%AE%E9%80%9A%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%9C%89%E7%94%A8%E7%9A%84%E9%94%AE%E4%BD%8D"><span class="toc-text">1.5 其它在普通模式下有用的键位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-%E5%A2%9E%E5%8A%A0%E4%BA%86%E5%9C%A8%E5%8F%AF%E8%A7%86%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">1.6 增加了在可视模式下的命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86"><span class="toc-text">2 窗口管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E9%80%9A%E8%BF%87%E5%88%86%E8%A3%82%E5%B1%8F%E5%B9%95%E5%88%9B%E9%80%A0%E7%AA%97%E5%8F%A3"><span class="toc-text">2.1 通过分裂屏幕创造窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%88%87%E6%8D%A2%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AA%97%E5%8F%A3"><span class="toc-text">2.2 切换不同的窗口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E4%B8%BA%E4%B8%8D%E5%90%8C%E7%9A%84%E7%AA%97%E5%8F%A3%E8%B0%83%E6%95%B4%E5%A4%A7%E5%B0%8F"><span class="toc-text">2.3 为不同的窗口调整大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%85%B3%E9%97%AD%E7%AA%97%E5%8F%A3"><span class="toc-text">2.4 关闭窗口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A0%87%E7%AD%BE%E9%A1%B5%E7%AE%A1%E7%90%86"><span class="toc-text">3 标签页管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BB%88%E7%AB%AF%E9%94%AE%E7%9B%98%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">4 终端键盘快捷键</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E5%BF%AB%E6%8D%B7%E9%94%AE-%E6%88%AA%E5%9B%BE-%E5%8A%A8%E5%9B%BE%E5%B7%B2%E7%BB%8F%E5%87%86%E5%A4%87%E5%A5%BD%EF%BC%81"><span class="toc-text">插件快捷键 (截图&#x2F;动图已经准备好！)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="toc-text">自动补全</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#COC-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="toc-text">COC (自动补全)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ultisnips"><span class="toc-text">Ultisnips</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95"><span class="toc-text">代码调试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vimspector-%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95%E6%8F%92%E4%BB%B6"><span class="toc-text">vimspector (代码调试插件)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88"><span class="toc-text">文件浏览</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#coc-explorer-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-text">coc-explorer - 文件浏览器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rnvimr-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-text">rnvimr - 文件浏览器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FZF-%E6%A8%A1%E7%B3%8A%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE%E5%99%A8"><span class="toc-text">FZF - 模糊文件查找器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#xtabline-%E7%B2%BE%E8%87%B4%E7%9A%84%E9%A1%B6%E6%A0%8F"><span class="toc-text">xtabline - 精致的顶栏</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97%E7%BC%96%E8%BE%91"><span class="toc-text">文字编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-table-mode"><span class="toc-text">vim-table-mode</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Undotree"><span class="toc-text">Undotree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-multiple-cursors"><span class="toc-text">vim-multiple-cursors</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-surround"><span class="toc-text">vim-surround</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-subversive"><span class="toc-text">vim-subversive</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-easy-align"><span class="toc-text">vim-easy-align</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AutoFormat"><span class="toc-text">AutoFormat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-markdown-toc-%E4%B8%BA-Markdown-%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E7%9B%AE%E5%BD%95"><span class="toc-text">vim-markdown-toc (为 Markdown 文件生成目录)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E5%86%85%E5%AF%BC%E8%88%AA"><span class="toc-text">缓冲区内导航</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-easy-motion"><span class="toc-text">vim-easy-motion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Vista-vim"><span class="toc-text">Vista.vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-signiture-%E4%B9%A6%E7%AD%BE"><span class="toc-text">vim-signiture - 书签</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%9B%BF%E6%8D%A2"><span class="toc-text">查找与替换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Far-vim-%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%9B%BF%E6%8D%A2"><span class="toc-text">Far.vim - 查找与替换</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git-%E7%9B%B8%E5%85%B3"><span class="toc-text">Git 相关</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-gitgutter"><span class="toc-text">vim-gitgutter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#fzf-gitignore"><span class="toc-text">fzf-gitignore</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-calendar"><span class="toc-text">vim-calendar</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Goyo-%E4%B8%8D%E4%BC%9A%E5%88%86%E5%BF%83%E5%9C%B0%E5%B7%A5%E4%BD%9C"><span class="toc-text">Goyo - 不会分心地工作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#suda-vim"><span class="toc-text">suda.vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#coc-translator"><span class="toc-text">coc-translator</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5%E8%A1%A5%E5%85%A8"><span class="toc-text">自定义代码片段补全</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown"><span class="toc-text">Markdown</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%A5%87%E6%80%AA%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="toc-text">一些奇怪的东西</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89-tx-%E7%84%B6%E5%90%8E%E8%BE%93%E5%85%A5%E4%BD%A0%E6%83%B3%E8%A6%81%E7%9A%84%E6%96%87%E5%AD%97"><span class="toc-text">按 tx 然后输入你想要的文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9E%82%E7%9B%B4%E5%85%89%E6%A0%87%E7%A7%BB%E5%8A%A8"><span class="toc-text">自定义垂直光标移动</span></a></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.27.0" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || null
+        }
+      });
+    })
+  }
+</script><script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script><script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
