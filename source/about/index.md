@@ -7,10 +7,10 @@ date: 2024-03-18 20:32:04
 
 ### Paris（Peirong）
 
-#### 就读于
-- {% timeline %}
-<!-- node 2019 年 9 月 1 日 -->
-Shanghai Maritime University
+#### 毕业于
+{% timeline %}
+<!-- node 2023 年 7 月 1 日 -->
+上海海事大学 信息工程学院 网络工程
 {% endtimeline %}
 
 #### 技术栈
