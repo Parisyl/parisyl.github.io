@@ -9,6 +9,7 @@ date: 2024-02-18 19:46:52
 description: 恢复旧版Bilibili页面，为了那些念旧的人。
 cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/vybpnj.jpg
 banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/sdbcqjkkjq.png
+leftbar: [ghuser]
 ---
 #### Preview
 

@@ -81,6 +81,8 @@ site_tree:
     rightbar: timeline
     nav_tabs:
       # 'more': https://github.com/xaoxuu
+  author:
+    base_dir: author
 
 copycode:
   enable: true
