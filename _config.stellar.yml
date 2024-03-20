@@ -54,6 +54,12 @@ style:
     link: 'hsl(207 90% 54%)' # 超链接颜色
     button: 'hsl(192 98% 55%)' # 按钮颜色
     hover: 'hsl(14 100% 57%)' # 按钮高亮颜色
+
+comments:
+  service: beaudar
+  beaudar:
+    repo: parisyl/parisyl.github.io
+
 # 站点主结构树
 site_tree:
   # -- 列表类页面 -- #
