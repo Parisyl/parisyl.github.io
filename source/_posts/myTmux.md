@@ -10,8 +10,7 @@ poster:
 tags: TMUX
 ---
 
-![tmux](https://draculatheme.com/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdracula%2Ftmux%2Fmaster%2Fscreenshot.png&w=1920&q=100)
-
+{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/1Bt3lu.png bg:white %}
 ### [tmux](https://github.com/tmux/tmux/wiki)
 
 #### Install using [tpm](https://github.com/tmux-plugins/tpm)
