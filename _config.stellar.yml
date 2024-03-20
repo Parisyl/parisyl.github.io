@@ -15,35 +15,36 @@ menubar:
       icon: solar:documents-bold-duotone # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
       title: 博客 # 标题
       url: / # 跳转链接，支持相对路径和绝对路径
-    - id: journal
+    - id: wiki
       theme: '#3DC550'
       icon: solar:notebook-bookmark-bold-duotone
-      title: 笔记
-      url: /journal/
+      title: 文档
+      url: /wiki/
     - id: explore
       theme: '#FA6400'
       icon: solar:planet-bold-duotone
       title: 探索
       url: /explore/
-    - id: social
+    - id: more
       theme: '#F44336'
       icon: solar:chat-square-like-bold-duotone
-      title: 社交
-      url: /friends/
+      title: 更多
+      url: /more/
 style:
   font-size:
-    root: 17px
-    body: 1rem # 15px
-    code: 90% # 14px
-    codeblock: .8rem # 13px
+    root: 16px
+    body: 16px # 15px
+    code: 100% # 14px
+    codeblock: 1rem # 13px
   font-family:
-    logo: 'system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
+    logo: '"LXGW WenKai Screen", sans-serif; system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
     body: '"LXGW WenKai Screen", sans-serif; "Helvetica Neue", Arial, sans-serif'
     code: '"Hack",Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
     codeblock: 'Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif'
     text-align: left # justify/left/center/right
+    hover: 'hsl(14 100% 57%)' # 按钮高亮颜色
   color:
-  # 动态颜色（会根据明暗主题重设明度值，只用关心色相和饱和度即可）
+    # 动态颜色（会根据明暗主题重设明度值，只用关心色相和饱和度即可）
     background: 'hsl(212 16% 98%)' # 浅色背景颜色
     block: 'hsl(212 8% 95%)' # 块背景颜色
     code: 'hsl(14 100% 48%)' # 行内代码颜色
@@ -55,10 +56,26 @@ style:
     button: 'hsl(192 98% 55%)' # 按钮颜色
     hover: 'hsl(14 100% 57%)' # 按钮高亮颜色
 
+
 comments:
-  service: beaudar
-  beaudar:
-    repo: parisyl/parisyl.github.io
+  service: giscus
+  # giscus
+  # https://giscus.app/zh-CN
+  giscus:
+    src: https://giscus.app/client.js
+    data-repo: parisyl/parisyl.github.io # [在此输入仓库]
+    data-repo-id: R_kgDOJk5dAg # [在此输入仓库 ID]
+    data-category: Announcements # [在此输入分类名]
+    data-category-id: DIC_kwDOJk5dAs4CeEZm
+    data-mapping: pathname
+    data-strict: 0
+    data-reactions-enabled: 1
+    data-emit-metadata: 0
+    data-input-position: top # top, bottom
+    data-theme: preferred_color_scheme
+    data-lang: zh-CN
+    crossorigin: anonymous
+
 
 # 站点主结构树
 site_tree:
@@ -89,6 +106,15 @@ site_tree:
       # 'more': https://github.com/xaoxuu
   author:
     base_dir: author
+    menu_id: post
+    leftbar: recent, timeline
+    rightbar: timeline
+  error_page:
+    menu_id: post
+    '404': '/404.html'
+    leftbar: recent, timeline
+    rightbar: timeline
+
 
 copycode:
   enable: true

@@ -1,3 +1,20 @@
+ghrepo:
+  layout: ghrepo
+related:
+  layout: related
+
+# 将其覆盖设置为空，可删除一个默认组件，例如 welcome:
+# Recent update
+recent:
+  layout: recent
+  rss: # /atom.xml # npm i hexo-generator-feed
+  limit: 10 # Count of posts
+
+# 页面树（与当前页面强关联的上下篇文章列表）
+tree:
+  layout: tree
+
+# 本文目录（当前页面内各级标题列表）
 toc:
   layout: toc
   list_number: false # 是否显示序号
@@ -5,14 +22,37 @@ toc:
   max_depth: 5 # 5 代表最多解析到 H5 标签
   fallback: recent # Use a backup widget when toc does not exist.
   collapse: false # true / false / auto (始终折叠/不折叠/自动折叠)
-recent:
-  layout: recent
-  rss: # /atom.xml # npm i hexo-generator-feed
-  limit: 5 # Count of posts
 
+# GitHub 用户信息
 ghuser:
   layout: ghuser
   username: Parisyl # your github login username
   avatar: true # show avatar or not
-  menu: true # show menu or not
 
+# 本文作者组件，需要先配置作者信息: authors.yml
+author:
+  layout: author
+  avatar: true
+
+# 标签云组件
+tagcloud:
+  layout: tagcloud
+  title: 标签云
+  # 标签云配置
+  min_font: 12
+  max_font: 24
+  amount: 100
+  orderby: name
+  order: 1 # 1, sac 升序；-1, desc 降序
+  color: true # 使用颜色
+  start_color: (#f9a8d4) # 开始的颜色。您可使用十六进位值（#b700ff），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
+  end_color: (#4ade80) # 结束的颜色。您可使用十六进位值（#b700ff），rgba（rgba(183, 0, 255, 1)），hsla（hsla(283, 100%, 50%, 1)）或 颜色关键字。此变量仅在 color 参数开启时才有用。
+  show_count: false # 显示每个标签的文章总数
+
+timeline:
+  layout: timeline
+  title: 近期动态
+  api: # https://api.github.com/repos/xaoxuu/hexo-theme-stellar/issues
+  user: # 默认显示所有人的数据，设置名称可过滤为仅显示某人的数据，多个名称用英文逗号隔开，不要加空格
+  type: # 默认不用写，如果是友链朋友圈数据请写 fcircle
+  limit: # 默认通过 api 上增加 per_page 来设置，如果是友链朋友圈，可通过这个设置数量
