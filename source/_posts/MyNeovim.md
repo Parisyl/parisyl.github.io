@@ -9,12 +9,11 @@ poster:
   color: yellow
 tags: VIM
 ---
-
+<br/>
 <center><a href="https://instaboard.page/gh-sponsor"><img src="https://user-images.githubusercontent.com/8187501/232345609-366fd597-8a32-4667-9e80-2487ebe6f7f6.png" alt="Sponsored by Instaboard"></img></a></center>
 <br/>
-
 <center><img src="https://raw.githubusercontent.com/theniceboy/nvim/master/demo.png"></center>
-
+<br/>
 <!-- TOC GFM -->
 
 * [安装此配置后你需要做的事](#安装此配置后你需要做的事)

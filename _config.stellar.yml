@@ -33,7 +33,7 @@ menubar:
 style:
   font-size:
     root: 16px
-    body: .9375rem # 15px
+    body: .975rem # 15px
     code: 85% # 14px
     codeblock: 0.8125rem # 13px
   font-family:
