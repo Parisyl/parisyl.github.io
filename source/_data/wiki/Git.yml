@@ -1,0 +1,17 @@
+name: Git实用教程
+title: Git
+description: Git是目前世界上最先进的分布式版本控制管理系统，用于敏捷高效地处理任何或小或大的项目。
+tags: [知识库]
+icon: https://f005.backblazeb2.com/file/img-forWeb/uPic/icon.svg
+base_dir: /wiki/Git/
+tree:
+  - index
+  - install
+  - fundamental
+  - server
+search: 
+  filter: /wiki/Git/
+  placeholder: 在 Git实用教程 中搜索
+leftbar: 
+  - tree
+  - recent

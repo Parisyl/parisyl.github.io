@@ -22,7 +22,7 @@ date: 2024-03-18 20:32:04
 
 ##### ECinema
 - 使用`Vue`+`Element Plus`构建的极简轻量在线影院。
-|项目地址|源码|
+|项目地址|源码地址|
 |:---|:---|
 |{% link https://ecinema.peiong.co ECinema icon:https://f005.backblazeb2.com/file/img-forWeb/uPic/tv-svgrepo-com.svg %}|{% ghcard parisyl/ECinema theme:dark %}|
 

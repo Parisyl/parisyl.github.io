@@ -33,9 +33,9 @@ menubar:
 style:
   font-size:
     root: 16px
-    body: 16px # 15px
-    code: 100% # 14px
-    codeblock: 1rem # 13px
+    body: .9375rem # 15px
+    code: 85% # 14px
+    codeblock: 0.8125rem # 13px
   font-family:
     logo: '"LXGW WenKai Screen", sans-serif; system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif'
     body: '"LXGW WenKai Screen", sans-serif; "Helvetica Neue", Arial, sans-serif'
