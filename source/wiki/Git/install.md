@@ -5,7 +5,7 @@ title: 安装与配置
 
 ## 安装
 
-{% tabs align:center %}
+{% tabs %}
 
 <!-- tab macOS -->
 {% link https://git-scm.com/download/mac 下载链接 icon:https://f005.backblazeb2.com/file/img-forWeb/uPic/icon.svg %}
@@ -19,9 +19,8 @@ Mac 自带 git 并且随着系统版本的更新，自带的 git 也会升级到
 在开始菜单里找到{% kbd Git %} -> {% kbd Git Bash %} ，会弹出 Git 命令窗口，你可以在该窗口进行 Git 操作。
 
 <!-- tab Linux -->
-
 {% link https://git-scm.com/download/linux 下载链接 icon:https://f005.backblazeb2.com/file/img-forWeb/uPic/icon.svg %}
-
+<left>
 安装指定系统的依赖包：
 
 {% code Centos/RedHat %}

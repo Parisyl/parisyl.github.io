@@ -11,7 +11,7 @@ tree:
   - server
 search: 
   filter: /wiki/Git/
-  placeholder: 在 Git实用教程 中搜索
+  placeholder: 在Git实用教程中搜索
 leftbar: 
   - tree
   - recent

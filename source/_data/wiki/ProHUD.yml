@@ -7,7 +7,7 @@ description: 一个易于上手又完全可定制化的专业HUD库，包含通�
 repo: xaoxuu/ProHUD
 search:
   filter: /wiki/ProHUD/
-  placeholder: 在 ProHUD 中搜索
+  placeholder: 在ProHUD中搜索
 leftbar: 
   - recent
   - related
