@@ -30,6 +30,7 @@ menubar:
       icon: solar:chat-square-like-bold-duotone
       title: 更多
       url: /more/
+
 style:
   font-size:
     root: 16px

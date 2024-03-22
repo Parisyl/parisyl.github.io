@@ -6,7 +6,7 @@ date: 2024-03-18 20:32:04
 ---
 
 ### Paris（Peirong）
-
+{% ghcard parisyl theme:dark %}
 #### 毕业于
 {% timeline %}
 <!-- node 2023 年 7 月 1 日 -->
@@ -14,8 +14,8 @@ date: 2024-03-18 20:32:04
 {% endtimeline %}
 
 #### 技术栈
-|`Spring`|`Vue`|`Javascript`|`Mybatis`|
-|------|------|------|------|
+|Spring|Vue|Javascript|Mybatis|
+|---|---|---|---|
 |{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/spring.png width:54px %}|{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/vue.png width:54px %}|{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/javascript.png width:54px %}|{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/tQLX4q.jpg width:54px %}|
 
 #### 项目经历

@@ -14,8 +14,8 @@ leftbar: [recent]
 #### Preview
 
 
-{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshot2312231.png bg:gray %}
-{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshotadadasawqwq.png bg:gray %}
+{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshot2312231.png bg:orange %}
+{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshotadadasawqwq.png bg:orange %}
 
 #### 前置要求
 
