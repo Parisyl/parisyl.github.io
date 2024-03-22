@@ -10,7 +10,7 @@ poster:
 tags: TMUX
 ---
 
-{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/1Bt3lu.png bg:white %}
+{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/1Bt3lu.png bg:orange %}
 ### [tmux](https://github.com/tmux/tmux/wiki)
 
 #### Install using [tpm](https://github.com/tmux-plugins/tpm)
