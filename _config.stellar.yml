@@ -130,6 +130,13 @@ tag_plugins:
     fancybox: true
 
 footer:
+  content: | # 支持 Markdown 格式
+    &nbsp; <center> Powered by <u>[Stellar](https://github.com/xaoxuu/hexo-theme-stellar/tree/1.27.0)</u>
+    由 <u>[Vercel](https://vercel.com/)</u> 提供托管服务 
+    「<span class="jinrishici-sentence"></span>」
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    </center>
+  # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
   social:
     github:
       icon: '<img src="https://f005.backblazeb2.com/file/img-forWeb/uPic/github-142-svgrepo-com.svg"/>'
@@ -149,5 +156,3 @@ footer:
     mail:
       icon: '<img src="https://f005.backblazeb2.com/file/img-forWeb/uPic/mail-svgrepo-com.svg"/>'
       url: mailto:ieep.roon@gmail.com
-  content: | # 支持 Markdown 格式
-    Powered by [{theme.name}]({theme.tree})
