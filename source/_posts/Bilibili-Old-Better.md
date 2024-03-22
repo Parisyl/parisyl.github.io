@@ -195,5 +195,5 @@ leftbar: [recent]
     document.addEventListener('keydown', handleKeyPress);
 })();
 ```
-#### 特别鸣谢：[Bilibili-Old](Bilibili-Old](https://github.com/MotooriKashin/Bilibili-Old) 
+#### 特别鸣谢：[Bilibili-Old](https://github.com/MotooriKashin/Bilibili-Old)
 
