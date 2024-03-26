@@ -616,10 +616,10 @@ class Person {
     let subStr = web.substr(0, 7) //zhangsan
     console.log("截取字符串的前7个字符:", subStr)
 
-    let subStr2 = web.substr(-3) //com
+    let subStr2 = web.substr(-3)
     console.log("截取字符串的最后3个字符:", subStr2)
 
-    let subStr3 = web.substr(4) //ruicode.com [字符串下标是从 0 开始]
+    let subStr3 = web.substr(4) // [字符串下标是从 0 开始]
     console.log("从字符串的第5个位置开始截取直至字符串末尾:", subStr3)
 
     //重复字符串
