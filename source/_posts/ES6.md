@@ -236,7 +236,7 @@ const PI = 3.14
     console.log("newArr", newArr)
 
     //使用for...of循环遍历数组
-    let arr6 = ["邓瑞", "dengruicode.com", 100] //数组可以包含不同的数据类型
+    let arr6 = ["张三", "https://blog.peiong.co", 100] //数组可以包含不同的数据类型
     for (let item of arr6) {
         console.log("for...of", item)
     }
@@ -533,9 +533,9 @@ class Person {
 
     //--- 对象解构
     let person = {
-        name: '邓瑞',
+        name: '张三',
         gender: '男',
-        web: 'dengruicode.com'
+        web: 'https://blog.peiong.co'
     }
 
     let { name } = person
@@ -586,7 +586,7 @@ class Person {
     console.log("替换1个字符串:", str7)
 
     // 去除字符串两侧指定的字符
-    let str8 = "   dengruicode.com   ".trim()
+    let str8 = "   https://blog.peiong.co   ".trim()
     console.log("去除字符串两侧指定的字符:", str8)
 
     // 判断是否包含某个字符串
@@ -613,7 +613,7 @@ class Person {
     console.log("将字符串按照指定字符分割成数组:", arr)
 
     // 字符串截取 substr(开始位置,截取长度)
-    let subStr = web.substr(0, 7) //dengrui
+    let subStr = web.substr(0, 7) //zhangsan
     console.log("截取字符串的前7个字符:", subStr)
 
     let subStr2 = web.substr(-3) //com
