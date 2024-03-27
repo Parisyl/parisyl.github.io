@@ -11,25 +11,25 @@ menubar:
   columns: 4 # 一行多少个
   items: # 可按照自己需求增加，符合以下格式即可
     - id: post # 页面中高亮的 menu_id
-      theme: '#1BCDFC' # 高亮时的颜色，仅 svg 中 fill="currentColor" 时有效
+      theme: '#1BCDFC'
       icon: solar:documents-bold-duotone # 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
       title: 博客 # 标题
       url: / # 跳转链接，支持相对路径和绝对路径
-    - id: wiki
-      theme: '#3DC550'
-      icon: solar:notebook-bookmark-bold-duotone
-      title: 文档
-      url: /wiki/
     - id: explore
-      theme: '#FA6400'
+      theme: '#facc15'
       icon: solar:planet-bold-duotone
       title: 探索
       url: /explore/
-    - id: more
-      theme: '#F44336'
+    - id: friends
+      theme: '#f9a8d4'
       icon: solar:chat-square-like-bold-duotone
       title: 更多
-      url: /more/
+      url: /friends/
+    - id: about
+      theme: '#ef4444'
+      icon: solar:mention-circle-bold #https://f005.backblazeb2.com/file/img-forWeb/uPic/mention-circle-svgrepo-com.svg
+      title: 关于
+      url: /about/
 
 style:
   font-size:

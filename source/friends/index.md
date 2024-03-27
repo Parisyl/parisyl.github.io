@@ -1,5 +1,5 @@
 ---
-menu_id: more
+menu_id: friends
 title: 友链
 cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/gMMd34.jpg
 banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/gMMd34.jpg
