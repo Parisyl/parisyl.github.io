@@ -11,21 +11,21 @@ cover: https://f005.backblazeb2.com/file/img-forWeb/uPic/vybpnj.jpg
 banner: https://f005.backblazeb2.com/file/img-forWeb/uPic/sdbcqjkkjq.png
 leftbar: [recent]
 ---
-#### Preview
+### Preview
 
 
 {% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshot2312231.png bg:pink %}
-{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/Screenshotadadasawqwq.png bg:pink %}
+{% image https://f005.backblazeb2.com/file/img-forWeb/uPic/LIQrTC.png bg:pink %}
 
-#### 前置要求
+### 前置要求
 
 
-##### [bilibili 页面净化大师](https://github.com/festoney8/bilibili-cleaner)
+#### [bilibili 页面净化大师](https://github.com/festoney8/bilibili-cleaner)
 
 - 开启「BV号转AV号」功能
 
 
-##### [Bilibili-Old (v9.1.8)](https://greasyfork.org/zh-CN/scripts/394296-bilibili-旧播放页?version=1111478) 
+#### [Bilibili-Old (v9.1.8)](https://greasyfork.org/zh-CN/scripts/394296-bilibili-旧播放页?version=1111478) 
 
 - 注释掉脚本内这段代码
 
@@ -33,7 +33,7 @@ leftbar: [recent]
 
 - 目的是舍弃旧版本的AV转换算法，使用页面净化大师的AV转换算法。视频页面加载时会先跳出新版播放器页面，需要重新刷新页面进入旧版播放页面。
 
-#### 脚本
+### 脚本
 
 ```javascript
 // ==UserScript==
@@ -195,5 +195,5 @@ leftbar: [recent]
     document.addEventListener('keydown', handleKeyPress);
 })();
 ```
-#### 特别鸣谢：[Bilibili-Old](https://github.com/MotooriKashin/Bilibili-Old)
+### 特别鸣谢：[Bilibili-Old](https://github.com/MotooriKashin/Bilibili-Old)
 
