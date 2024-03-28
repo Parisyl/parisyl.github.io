@@ -128,4 +128,93 @@ class Solution {
 ```
 
 
+## 字符串匹配
+
+[LeetCode](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/) {% mark 简单 color:green %}
+
+### 题目描述
+给你两个字符串 haystack 和 needle ，请你在 haystack 字符串中找出 needle 字符串的第一个匹配项的下标（下标从 0 开始）。如果 needle 不是 haystack 的一部分，则返回  -1 。
+
+示例 1：
+输入：haystack = "sadbutsad", needle = "sad"
+输出：0
+解释："sad" 在下标 0 和 6 处匹配。
+第一个匹配项的下标是 0 ，所以返回 0 。
+
+示例 2：
+输入：haystack = "leetcode", needle = "leeto"
+输出：-1
+解释："leeto" 没有在 "leetcode" 中出现，所以返回 -1 。
+ 
+
+### 解题思路
+#### 暴力匹配
+我们可以让字符串 `needle` 与字符串 `haystack` 的所有长度为 `m` 的子串均匹配一次。
+
+为了减少不必要的匹配，我们每次匹配失败即立刻停止当前子串的匹配，对下一个子串继续匹配。如果当前子串匹配成功，我们返回当前子串的开始位置即可。如果所有子串都匹配失败，则返回 −1。
+
+```Java
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int n = haystack.length(), m = needle.length();
+        for (int i = 0; i + m <= n; i++) {
+            boolean flag = true;
+            for (int j = 0; j < m; j++) {
+                if (haystack.charAt(i + j) != needle.charAt(j)) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+
+```
+
+#### Knuth-Morris-Pratt算法
+Knuth-Morris-Pratt算法，算法，简称 KMP 算法，由 Donald Knuth、James H. Morris 和 Vaughan Pratt 三人于 1977 年联合发表。
+
+Knuth-Morris-Pratt（KMP）算法是一种用于在字符串中查找子字符串的高效算法。它的思路是利用已经匹配过的部分字符信息来避免重复的字符比较，从而实现线性时间复杂度的字符串匹配。
+
+KMP算法的关键在于构建一个部分匹配表（Partial Match Table），用于记录模式串中出现的最长的公共前缀和后缀的长度。通过预处理模式串，KMP算法在匹配过程中利用这个部分匹配表来跳过已经匹配过的字符，从而提高匹配效率。
+
+KMP算法的核心是两个指针：主串指针和模式串指针。在匹配过程中，主串指针向前移动，模式串指针根据部分匹配表来确定下一个匹配位置。当匹配失败时，根据部分匹配表调整模式串指针，从而实现快速跳过不必要的比较。
+
+```Java
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int n = haystack.length(), m = needle.length();
+        if (m == 0) {
+            return 0;
+        }
+        int[] pi = new int[m];
+        for (int i = 1, j = 0; i < m; i++) {
+            while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
+                j = pi[j - 1];
+            }
+            if (needle.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+            pi[i] = j;
+        }
+        for (int i = 0, j = 0; i < n; i++) {
+            while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+                j = pi[j - 1];
+            }
+            if (haystack.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+            if (j == m) {
+                return i - m + 1;
+            }
+        }
+        return -1;
+    }
+}
+```
+
 
