@@ -175,7 +175,7 @@ class Solution {
 
 ```
 
-#### Knuth-Morris-Pratt算法
+#### KMP算法
 Knuth-Morris-Pratt算法，算法，简称 KMP 算法，由 Donald Knuth、James H. Morris 和 Vaughan Pratt 三人于 1977 年联合发表。
 
 Knuth-Morris-Pratt（KMP）算法是一种用于在字符串中查找子字符串的高效算法。它的思路是利用已经匹配过的部分字符信息来避免重复的字符比较，从而实现线性时间复杂度的字符串匹配。
